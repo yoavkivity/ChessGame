@@ -20,7 +20,8 @@ public class GamePanel extends JPanel {
 
     // Class static attributes:
     private static final int SQUARE_SIDE = 75;
-    private static final String IMAGES_PATH = "../Chess/PiecesImages";
+//    private static final String IMAGES_PATH = "../Chess/PiecesImages";
+    private static final String IMAGES_PATH = Paths.get("").toAbsolutePath().resolve("PiecesImages") + File.separator;
     private static final Color DARK_TILE_COLOR = new Color(118, 150, 86);
     private static final Color BRIGHT_TILE_COLOR = new Color(238, 238, 210);
     private static final Color PICKED_PIECE_COLOR = new Color(255, 229, 110);
@@ -692,8 +693,7 @@ public class GamePanel extends JPanel {
             if (piece.getIsAlive()) {
                 String color = piece.getColor().toString().substring(0, 1).toUpperCase() + piece.getColor().toString().substring(1).toLowerCase();
                 String pieceName = piece.getPieceName();
-                drawPiece(piece, IMAGES_PATH + "/" + color + "_" + pieceName + ".png", graph);
-                //piece.setPiecePath(Path.of(IMAGES_PATH + "/" + color + "_" + pieceName + ".png"));
+                drawPiece(piece, IMAGES_PATH + color + "_" + pieceName + ".png", graph);
             } else {
                 iterator.remove(); // Remove the piece from the ArrayList using the iterator
             }

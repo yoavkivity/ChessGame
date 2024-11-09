@@ -11,7 +11,6 @@ public class SplitImage {
     }
 
     // path to save the pieces images
-//    private static final String IMAGES_PATH = "..\\Chess\\PiecesImages\\";
     private static final String IMAGES_PATH = Paths.get("").toAbsolutePath().resolve("PiecesImages") + File.separator;
 
 
