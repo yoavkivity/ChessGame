@@ -4,13 +4,17 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Paths;
 
 public class SplitImage {
     private SplitImage() {
     }
 
     // path to save the pieces images
-    private static final String IMAGES_PATH = "..\\Chess\\PiecesImages\\";
+//    private static final String IMAGES_PATH = "..\\Chess\\PiecesImages\\";
+    private static final String IMAGES_PATH = Paths.get("").toAbsolutePath().resolve("PiecesImages") + File.separator;
+
+
 
     // pieces name array
     private static final String[] PIECES_NAMES = {"White_King", "White_Queen", "White_Bishop", "White_Knight", "White_Rook", "White_Pawn"
